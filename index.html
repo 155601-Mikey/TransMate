@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Translation App</title>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Translate App</h1>
-            <button id="theme-toggle">Toggle Dark/Light Mode</button>
+            <div class="theme-toggle">
+                <span class="material-icons" id="theme-icon">dark_mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="material-icons" id="theme-icon-light">light_mode</span>
+            </div>
         </header>
         <main>
             <div class="language-selector">
-                <select id="source-lang">
-                    <!-- Options for languages -->
-                </select>
+                <select id="source-lang"></select>
                 <textarea id="text-input" placeholder="Enter text to translate..."></textarea>
-                <select id="target-lang">
-                    <!-- Options for languages -->
-                </select>
+                <select id="target-lang" style="display: none;"></select>
+                <button id="multi-translate">Translate Through Multiple</button>
             </div>
             <button id="translate-btn">Translate</button>
+            <div id="loading" class="hidden">Loading...</div>
             <div id="translation-output"></div>
         </main>
     </div>
